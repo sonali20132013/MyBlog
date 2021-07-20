@@ -1,16 +1,23 @@
-# Memories
+This is a full stack project using React, Redux, NodeJs, MongoDb, ExpressJs.
 
-![Memories](https://i.ibb.co/Z8Y0CJv/Screenshot-2020-10-30-at-11-10-04.png)
+Please install npm packages for both client and server side to start the app
 
-## Introduction
-This is a code repository for the corresponding video tutorial - https://youtube.com/playlist?list=PL6QREj8te1P7VSwhrMf3D3Xt4V6_SRkhu.
+Open two terminal,
 
-Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called "Memories" and it is a simple social media app that allows users to post interesting events that happened in their lives.
+client/ 
 
-By the end of this video, you will have a strong understanding of how the MERN Stack works.
+## npm install 
+## npm start
 
-## Stay up to date with new projects
-New major projects coming soon, subscribe to the mailing list to stay up to date https://javascriptmastery.eo.page/mailing-list.
+http://localhost:3000/
 
-Setup:
-- run ```npm i && npm start``` for both client and server side to start the app
+server/ 
+
+## npm install 
+## npm start
+
+http://localhost:5000/
+
+Please use your own mongoDb connection URL to connect with database.
+
+https://www.mongodb.com/
