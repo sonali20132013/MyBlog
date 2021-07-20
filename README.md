@@ -1,5 +1,7 @@
 This is a full stack project using React, Redux, NodeJs, MongoDb, ExpressJs.
 
+Live : https://sonali-blog.netlify.app/
+
 Please install npm packages for both client and server side to start the app
 
 Open two terminal,
