@@ -7,6 +7,7 @@ import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
 import useStyles from './styles';
 import logo from './images/logo.png';
+import bg from './images/bg.jpg';
 
 const App = () => {
   const [currentId, setCurrentId] = useState(0);
@@ -19,14 +20,14 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
+      <AppBar style={{backgroundImage: `url(${bg})`}} className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">Sonali Blog</Typography>
         <img className={classes.image} src={logo} alt="icon" height="60" />
       </AppBar>
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-            <Grid item xs={12} sm={7}>
+            <Grid item xs={12} sm={8}>
               <Posts setCurrentId={setCurrentId} />
             </Grid>
             <Grid item xs={12} sm={4}>
