@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { Paper, Typography, CircularProgress, Divider, Card } from '@material-ui/core/';
+import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { useParams, useHistory } from 'react-router-dom';
 
 import { getPost, getPostsBySearch } from '../../actions/posts';
+import CommentSection from './CommentSection';
 import useStyles from './styles';
 
 const Post = () => {
@@ -35,7 +36,6 @@ const Post = () => {
       </Paper>
     );
   }
-  console.log('posts', posts);
 
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
@@ -51,11 +51,11 @@ const Post = () => {
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong>Comments - coming soon!</strong></Typography>
+          <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>
         <div className={classes.imageSection}>
-          <img className={classes.media} src={post.selectedFile} alt={post.title} />
+          <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
       {!!recommendedPosts.length && (
@@ -64,7 +64,6 @@ const Post = () => {
           <Divider />
           <div className={classes.recommendedPosts}>
             {recommendedPosts.map(({ title, name, message, likes, selectedFile, _id }) => (
-              <Card className={classes.cardReccomended} raised elevation={6}>
               <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openPost(_id)} key={_id}>
                 <Typography gutterBottom variant="h6">{title}</Typography>
                 <Typography gutterBottom variant="subtitle2">{name}</Typography>
@@ -72,7 +71,6 @@ const Post = () => {
                 <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography>
                 <img src={selectedFile} width="200px" />
               </div>
-              </Card>
             ))}
           </div>
         </div>
